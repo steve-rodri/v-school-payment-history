@@ -1,0 +1,17 @@
+{
+  "name": "mia-share-scrape",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "bun run start.ts"
+  },
+  "dependencies": {
+    "@types/cheerio": "^0.22.35",
+    "@types/node": "^20.11.16",
+    "axios": "^1.6.7",
+    "cheerio": "^1.0.0-rc.12",
+    "puppeteer": "^21.11.0",
+    "typescript": "^5.3.3"
+  }
+}
