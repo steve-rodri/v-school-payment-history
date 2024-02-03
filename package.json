@@ -1,17 +1,45 @@
 {
-  "name": "mia-share-scrape",
+  "name": "v-school-payment-history",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "license": "MIT",
   "scripts": {
-    "start": "bun run start.ts"
+    "start": "bun run index.ts",
+    "fresh": "rm ./storage/page_content.html && bun run index.ts"
   },
   "dependencies": {
-    "@types/cheerio": "^0.22.35",
-    "@types/node": "^20.11.16",
     "axios": "^1.6.7",
     "cheerio": "^1.0.0-rc.12",
+    "csv-writer": "^1.6.0",
     "puppeteer": "^21.11.0",
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.35",
+    "@types/node": "^20.11.16",
+    "@types/readline-sync": "^1.4.8",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "eslint": "^8.56.0",
     "typescript": "^5.3.3"
+  },
+  "eslintConfig": {
+    "env": {
+      "es2021": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "rules": {}
   }
 }
