@@ -4,7 +4,7 @@ import puppeteer from "puppeteer";
 import { Credentials } from "./getCredentials";
 import { BASE_URL } from "../constants";
 
-export const CONTENT_PATH = "./storage/page_content.html";
+const CONTENT_PATH = "./storage/page_content.html";
 
 export const getPageContent = async (credentials: Credentials) => {
   if (fs.existsSync(CONTENT_PATH)) {

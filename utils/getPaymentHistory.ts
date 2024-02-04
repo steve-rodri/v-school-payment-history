@@ -1,5 +1,4 @@
 import cheerio from "cheerio";
-import { TOTAL_COLUMNS } from "../constants";
 import { convertShortDateToISO } from "./convertShortDateToISO";
 
 const columnHeaders = [
@@ -22,13 +21,16 @@ export const getPaymentHistory = async (content: string) => {
   const tableData: Payment[] = [];
 
   $("table tr").each((_, element) => {
-    const columnValues = Array.from({ length: TOTAL_COLUMNS }, (_, i) => {
-      const cell = $(element)
-        .find(`td:nth-child(${i + 1})`)
-        .text()
-        .trim();
-      return cell;
-    });
+    const columnValues = Array.from(
+      { length: columnHeaders.length },
+      (_, i) => {
+        const cell = $(element)
+          .find(`td:nth-child(${i + 1})`)
+          .text()
+          .trim();
+        return cell;
+      },
+    );
 
     if (columnValues.every((c) => !c)) return;
 
